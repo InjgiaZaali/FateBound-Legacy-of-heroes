@@ -20,7 +20,7 @@ pygame.mixer.music.set_volume(0.5)
 pygame.mixer.music.play(-1) 
 
 
-death_sound = pygame.mixer.Sound('game/death.mp3')
+death_sound = pygame.mixer.Sound('game/Death.mp3')
 death_sound.set_volume(0.7) 
 
 sword_sound = pygame.mixer.Sound('game/sword.mp3') 
