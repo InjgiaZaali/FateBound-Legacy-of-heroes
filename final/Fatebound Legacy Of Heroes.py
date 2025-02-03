@@ -111,7 +111,7 @@ class Fighter():
         self.start_potions = potions
         self.potions = potions
         self.alive = True
-        self.dmgboost = dmgboosts
+        self.start_dmgboost = dmgboosts
         self.damage_boosts = dmgboosts
         self.animation_list = []
         self.frame_index = 0
@@ -222,6 +222,7 @@ class Fighter():
     def reset (self):
         self.alive = True
         self.potions = self.start_potions
+        self.dmgboost = self.start_dmgboost
         self.hp = self.max_hp
         self.frame_index = 0
         self.action = 0
@@ -330,7 +331,7 @@ while run:
     pygame.mouse.set_visible(True)
     pos = pygame.mouse.get_pos()
     for count, enemy in enumerate(enemy_list):
-        if enemy.rect.collidepoint(pos):
+        if enemy.rect.collidepoint(pos): #collidepoint(pos) is a method that checks if the given pos (a tuple of (x, y) coordinates) is inside the rectangle.
             #hide mouse
             pygame.mouse.set_visible(False)
             #show sword in place of mouse cursor
@@ -381,7 +382,7 @@ while run:
                         action_cooldown = 0
     else:
         game_over = -1
-
+    
     if game_over == 0:
     #player action	if knight.alive == True:
         if current_fighter == 1:
